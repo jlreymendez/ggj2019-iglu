@@ -9,9 +9,6 @@ public class BaseMover : MonoBehaviour {
     public void MoveBase(Collider collider) {
       var bastion = collider.GetComponentInParent<Bastion>();
       // Only move when visiting current bastion and target bastion is set.
-      Debug.Log(_currentBastion.Value);
-      Debug.Log(_targetBastion.Value);
-      Debug.Log(bastion == _currentBastion.Value);
       if (
         _currentBastion.Value == null ||
         bastion != _currentBastion.Value ||
