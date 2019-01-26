@@ -18,9 +18,7 @@ public class Energy : MonoBehaviour {
     public void Recover(Collider collider) {
         // Check the state of the base.
         var bastion = collider.GetComponentInParent<Bastion>();
-        if (bastion.HasFamily) {
-            _currentEnergy.Value = 1.0f;
-        }
+        _currentEnergy.Value += bastion.GiveLight(_currentEnergy.Value);
     }
 
     public void EnterBaseArea(Collider collider) {

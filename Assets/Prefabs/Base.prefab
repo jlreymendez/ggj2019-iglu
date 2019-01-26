@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colors:
   - {r: 0.37647063, g: 0.7490196, b: 0.60784316, a: 1}
-  - {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  - {r: 0.72156864, g: 0.5372549, b: 0.36078432, a: 1}
 --- !u!1 &4254141134687614548
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,10 +248,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f997e203c873f454a99c57af43f0001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentBastion:
+  _maxEnergy:
     _useConstant: 1
-    _constantValue: {fileID: 0}
+    _constantValue: 3
     _variable: {fileID: 0}
+  _currentBastion:
+    _useConstant: 0
+    _constantValue: {fileID: 0}
+    _variable: {fileID: 11400000, guid: f637669f2545fa44b84e7057ca27e809, type: 2}
   _hasLight:
     _useConstant: 1
     _constantValue: 0
@@ -260,6 +264,7 @@ MonoBehaviour:
     _useConstant: 1
     _constantValue: 0
     _variable: {fileID: 0}
+  _onFamilyDied: {fileID: 11400000, guid: bb3e55700deb96645b35d03a9cb2ee12, type: 2}
   _onTurnOn:
     m_PersistentCalls:
       m_Calls:
@@ -274,6 +279,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _onTurnOff:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _onMoveIn:

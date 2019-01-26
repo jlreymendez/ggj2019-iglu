@@ -8,7 +8,7 @@ public class Bastion : MonoBehaviour {
 
     #region Public
     public bool HasLight {
-        get { return _hasLight.Value; }
+        get { return _homeEnergy > 0; }
     }
 
     public bool HasFamily {
@@ -18,9 +18,25 @@ public class Bastion : MonoBehaviour {
     public void TurnLight() {
         if (_hasLight) { return; }
 
-        _hasLight.Value = true;
+        _homeEnergy = _maxEnergy.Value;
 
         _onTurnOn.Invoke();
+    }
+
+    public float GiveLight(float currentLight) {
+        if (!_hasFamily) { return 0f; }
+
+        var reduction = Mathf.Min(1 - currentLight, _homeEnergy);
+        _homeEnergy -= reduction;
+        if (_homeEnergy <= 0f) {
+            _onTurnOff.Invoke();
+            if (_hasFamily) {
+                _hasFamily.Value = false;
+                _onFamilyDied.Raise();
+            }
+        }
+
+        return reduction;
     }
 
     public void MoveIn() {
@@ -29,27 +45,32 @@ public class Bastion : MonoBehaviour {
     }
 
     public void MoveOut() {
+        _homeEnergy = 0f;
         _hasFamily.Value = false;
         _onMoveOut.Invoke();
     }
     #endregion
 
     #region UnityAPI
+    [SerializeField] FloatReference _maxEnergy;
     [SerializeField] BastionReference _currentBastion;
     [SerializeField] BoolReference _hasLight;
     [SerializeField] BoolReference _hasFamily;
+    [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] UnityEvent _onTurnOn;
+    [SerializeField] UnityEvent _onTurnOff;
     [SerializeField] UnityEvent _onMoveIn;
     [SerializeField] UnityEvent _onMoveOut;
 
     void Awake() {
-        if (_currentBastion != null) {
+        if (_hasFamily) {
             _currentBastion.Value = this;
+            _homeEnergy = _maxEnergy;
         }
     }
     #endregion
 
     #region Private
-    FloatReference _lightStrength;
+    float _homeEnergy = 0f;
     #endregion
 }
