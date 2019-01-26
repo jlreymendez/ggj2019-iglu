@@ -6,11 +6,7 @@ public class PlayerCharacter : MonoBehaviour
 {
     public float speed = 1;
 
-    private readonly float EPSILON = 0.00001f;
-    private Vector3 lastMoveDir = Vector3.zero;
-    private string lastState = "PlayerIdleLeftDown";
-    private Animator animator;
-
+    private static string PLAYER_START = "PlayerStart";
     private static string PLAYER_MOVE_RIGHT_UP = "PlayerMoveRightUp";
     private static string PLAYER_MOVE_RIGHT_DOWN = "PlayerMoveRightDown";
     private static string PLAYER_MOVE_LEFT_UP = "PlayerMoveLeftUp";
@@ -20,9 +16,18 @@ public class PlayerCharacter : MonoBehaviour
     private static string PLAYER_IDLE_LEFT_UP = "PlayerIdleLeftUp";
     private static string PLAYER_IDLE_LEFT_DOWN = "PlayerIdleLeftDown";
 
+    private readonly float EPSILON = 0.00001f;
+    private Vector3 lastMoveDir = Vector3.zero;
+    private string lastState = PLAYER_START;
+    private Animator animator;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+
+        //Default state
+        animator.Play(PLAYER_IDLE_RIGHT_DOWN);
+        lastState = PLAYER_IDLE_RIGHT_DOWN;
     }
 
     private void Update()
@@ -41,14 +46,8 @@ public class PlayerCharacter : MonoBehaviour
         transform.position += moveDir * speed * Time.deltaTime;
     }
 
-
-
     private void PlayAnimator(Vector3 animatorDir)
     {
-        animator.SetBool("idle", false);
-        animator.SetFloat("moveHorizontal", animatorDir.x);
-        animator.SetFloat("moveVertical", animatorDir.z);
-
         if(Mathf.Abs(animatorDir.x) < EPSILON &&
             Mathf.Abs(animatorDir.z) < EPSILON)
         {
@@ -213,8 +212,24 @@ public class PlayerCharacter : MonoBehaviour
             {
                 animator.Play(PLAYER_IDLE_RIGHT_DOWN);
                 lastState = PLAYER_IDLE_RIGHT_DOWN;
+            }else if(lastMoveDir.x < -EPSILON)
+            {
+                animator.Play(PLAYER_IDLE_LEFT_DOWN);
+                lastState = PLAYER_IDLE_LEFT_DOWN;
+            }else if (lastMoveDir.x > EPSILON)
+            {
+                animator.Play(PLAYER_IDLE_RIGHT_DOWN);
+                lastState = PLAYER_IDLE_RIGHT_DOWN;
             }
-
+            else if (lastMoveDir.z < -EPSILON)
+            {
+                animator.Play(PLAYER_IDLE_RIGHT_DOWN);
+                lastState = PLAYER_IDLE_RIGHT_DOWN;
+            }else if (lastMoveDir.z > EPSILON)
+            {
+                animator.Play(PLAYER_IDLE_RIGHT_UP);
+                lastState = PLAYER_IDLE_RIGHT_UP;
+            }
         }
         else
         {
