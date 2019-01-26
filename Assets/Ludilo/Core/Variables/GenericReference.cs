@@ -20,6 +20,14 @@ namespace Ludilo {
       get {
         return _useConstant ? _constantValue : _variable != null ? _variable.Value : default(K);
       }
+
+      set {
+        if (_useConstant) {
+          _constantValue = value;
+        } else if (_variable != null) {
+          _variable.Value = value;
+        }
+      }
     }
 
     public void Reset() {
