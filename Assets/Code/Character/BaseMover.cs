@@ -16,7 +16,6 @@ public class BaseMover : MonoBehaviour {
       ) {
         return;
       }
-      Debug.Log("Moverse");
       _currentBastion.Value.MoveOut();
       _targetBastion.Value.MoveIn();
       _currentBastion.Value = _targetBastion;

@@ -48,6 +48,7 @@ public class Bastion : MonoBehaviour {
         _homeEnergy = 0f;
         _hasFamily.Value = false;
         _onMoveOut.Invoke();
+        _onFamilyMoved.Raise();
     }
     #endregion
 
@@ -57,6 +58,7 @@ public class Bastion : MonoBehaviour {
     [SerializeField] BoolReference _hasLight;
     [SerializeField] BoolReference _hasFamily;
     [SerializeField] GameEvent _onFamilyDied;
+    [SerializeField] GameEvent _onFamilyMoved;
     [SerializeField] UnityEvent _onTurnOn;
     [SerializeField] UnityEvent _onTurnOff;
     [SerializeField] UnityEvent _onMoveIn;
