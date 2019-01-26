@@ -13,11 +13,11 @@ public class AmbientChangeEvents : MonoBehaviour
           _currentBastion.Value != null &&
           bastion == _currentBastion.Value)
         {
-            _playerEnterBastion.Raise();
+            _playerEnterHouse.Raise();
         }
         else
         {
-            _playerEnterHouse.Raise();
+            _playerEnterBastion.Raise();
         }
     }
 
