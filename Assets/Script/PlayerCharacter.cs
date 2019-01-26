@@ -7,6 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     public float speed = 1;
 
     private static string PLAYER_START = "PlayerStart";
+    private static string PLAYER_DEAD = "PlayerDead";
     private static string PLAYER_MOVE_RIGHT_UP = "PlayerMoveRightUp";
     private static string PLAYER_MOVE_RIGHT_DOWN = "PlayerMoveRightDown";
     private static string PLAYER_MOVE_LEFT_UP = "PlayerMoveLeftUp";
@@ -32,7 +33,16 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        handleMovement();
+        if(!lastState.Equals(PLAYER_DEAD))
+        { 
+            handleMovement();
+        }
+    }
+
+    public void PlayerDead()
+    {
+        animator.Play(PLAYER_DEAD);
+        lastState = PLAYER_DEAD;
     }
 
     private void handleMovement()
