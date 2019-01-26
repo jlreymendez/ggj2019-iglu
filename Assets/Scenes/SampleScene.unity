@@ -314,11 +314,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4883173036666179897, guid: 6496d032ff62b524e9f1088c07393b58,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6496d032ff62b524e9f1088c07393b58, type: 3}
 --- !u!1001 &708840375
@@ -482,12 +477,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107963346}
   m_CullTransparentMesh: 0
---- !u!1 &1115693945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968003545340774027, guid: d23113b47b6f08e41890db0afd46156d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6576247395735048075}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1236273389
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,18 +850,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2182644576846316979 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7091356973495157507, guid: d23113b47b6f08e41890db0afd46156d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6576247395735048075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb552aad3032c4007bed2725970d97ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6576247395735048075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -939,49 +916,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2261121517880296956, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: _currentEnergy._useConstant
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2261121517880296956, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: _currentEnergy._variable
-      value: 
-      objectReference: {fileID: 11400000, guid: 63bea294aaf816d4abb0564910ee0731,
-        type: 2}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2182644576846316979}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_enabled
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 1115693945}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
