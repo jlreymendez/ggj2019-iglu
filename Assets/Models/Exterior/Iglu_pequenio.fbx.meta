@@ -158,7 +158,22 @@ ModelImporter:
     4300054: Cylinder.002
     4300056: Cylinder
     4300058: Icosphere
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlancoIglu
+    second: {fileID: 2100000, guid: 9a4c25412e7165e4b9218d48fe78545e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ab9934c31c225494ab1848a5ab3ec0a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roca
+    second: {fileID: 2100000, guid: 888a8a19eab0cab469655075eb3ce31e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

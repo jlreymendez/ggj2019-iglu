@@ -15,6 +15,14 @@ public class Bastion : MonoBehaviour {
         get { return _hasFamily.Value; }
     }
 
+    public void Enter() {
+        _onEnter.Invoke();
+    }
+
+    public void Exit() {
+        _onExit.Invoke();
+    }
+
     public void TurnLight() {
         if (_hasLight) { return; }
 
@@ -59,6 +67,8 @@ public class Bastion : MonoBehaviour {
     [SerializeField] BoolReference _hasFamily;
     [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] GameEvent _onFamilyMoved;
+    [SerializeField] UnityEvent _onEnter;
+    [SerializeField] UnityEvent _onExit;
     [SerializeField] UnityEvent _onTurnOn;
     [SerializeField] UnityEvent _onTurnOff;
     [SerializeField] UnityEvent _onMoveIn;
