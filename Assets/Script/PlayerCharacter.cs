@@ -36,7 +36,7 @@ public class PlayerCharacter : MonoBehaviour
         float vMove = Input.GetAxis("Vertical");
 
         bool isIdle = Mathf.Abs(hMove) < EPSILON && Mathf.Abs(vMove) < EPSILON;
-        Vector3 moveDir = new Vector3(hMove, 0, vMove);
+        Vector3 moveDir = new Vector3(hMove, 0, vMove).normalized;
         PlayAnimator(moveDir);
         transform.position += moveDir * speed * Time.deltaTime;
     }
