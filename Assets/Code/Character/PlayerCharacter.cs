@@ -49,7 +49,6 @@ public class PlayerCharacter : MonoBehaviour
 
     private void handleMovement()
     {
-        _rigidbody.velocity = Vector3.zero;
         float hMove = Input.GetAxis("Horizontal");
         float vMove = Input.GetAxis("Vertical");
 
@@ -57,7 +56,7 @@ public class PlayerCharacter : MonoBehaviour
         Vector3 moveDir = new Vector3(hMove, 0, vMove).normalized;
         PlayAnimator(moveDir);
         Vector3 newPosition = transform.position + moveDir * speed * Time.deltaTime;
-        _rigidbody.MovePosition(newPosition);
+        _rigidbody.position = newPosition;
     }
 
     private void PlayAnimator(Vector3 animatorDir)
