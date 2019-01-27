@@ -15,10 +15,18 @@ public class Energy : MonoBehaviour {
         _draining = true;
     }
 
-    public void Recover(Collider collider) {
+    public void EnterBase(Collider collider) {
         // Check the state of the base.
         var bastion = collider.GetComponentInParent<Bastion>();
         _currentEnergy.Value += bastion.GiveLight(_currentEnergy.Value);
+        _draining = false;
+    }
+
+    public void ExitBase(Collider collider) {
+        var bastion = collider.GetComponentInParent<Bastion>();
+        if (!bastion.HasLight) {
+            _draining = true;
+        }
     }
 
     public void EnterBaseArea(Collider collider) {
@@ -26,6 +34,10 @@ public class Energy : MonoBehaviour {
         if (bastion.HasLight) {
             _draining = false;
         }
+    }
+
+    public void ExitBaseArea(Collider collider) {
+        _draining = true;
     }
 
     #endregion

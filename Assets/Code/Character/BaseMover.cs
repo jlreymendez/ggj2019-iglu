@@ -12,7 +12,8 @@ public class BaseMover : MonoBehaviour {
       if (
         _currentBastion.Value == null ||
         bastion != _currentBastion.Value ||
-        _targetBastion.Value == null
+        _targetBastion.Value == null||
+        _targetBastion.Value == _currentBastion.Value
       ) {
         return;
       }

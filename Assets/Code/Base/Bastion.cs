@@ -8,7 +8,7 @@ public class Bastion : MonoBehaviour {
 
     #region Public
     public bool HasLight {
-        get { return _homeEnergy > 0; }
+        get { return _homeEnergy > 0f; }
     }
 
     public bool HasFamily {
@@ -24,7 +24,7 @@ public class Bastion : MonoBehaviour {
     }
 
     public void TurnLight() {
-        if (_hasLight) { return; }
+        if (HasLight) { return; }
 
         _homeEnergy = _maxEnergy.Value;
 
@@ -32,13 +32,15 @@ public class Bastion : MonoBehaviour {
     }
 
     public float GiveLight(float currentLight) {
-        if (!_hasFamily) { return 0f; }
+        if (!HasFamily || !HasLight) {
+            return 0f;
+        }
 
         var reduction = Mathf.Min(1 - currentLight, _homeEnergy);
         _homeEnergy -= reduction;
         if (_homeEnergy <= 0f) {
             _onTurnOff.Invoke();
-            if (_hasFamily) {
+            if (HasFamily) {
                 _hasFamily.Value = false;
                 _onFamilyDied.Raise();
             }
@@ -63,7 +65,6 @@ public class Bastion : MonoBehaviour {
     #region UnityAPI
     [SerializeField] FloatReference _maxEnergy;
     [SerializeField] BastionReference _currentBastion;
-    [SerializeField] BoolReference _hasLight;
     [SerializeField] BoolReference _hasFamily;
     [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] GameEvent _onFamilyMoved;
@@ -77,8 +78,11 @@ public class Bastion : MonoBehaviour {
     void Awake() {
         if (_hasFamily) {
             _currentBastion.Value = this;
-            _homeEnergy = _maxEnergy;
         }
+    }
+
+    void OnDestroy() {
+        _currentBastion.Value = null;
     }
     #endregion
 
