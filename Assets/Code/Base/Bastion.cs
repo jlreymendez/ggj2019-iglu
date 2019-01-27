@@ -19,12 +19,20 @@ public class Bastion : MonoBehaviour {
         get { return _allowsFamily.Value; }
     }
 
+    public bool FinalHome {
+        get { return _finalHome.Value; }
+    }
+
+    public bool Emptied {
+        get { return _emptied; }
+    }
+
     public void Enter() {
-        _onEnter.Invoke();
+        _onEnter.Invoke(this);
     }
 
     public void Exit() {
-        _onExit.Invoke();
+        _onExit.Invoke(this);
     }
 
     public void TurnLight() {
@@ -56,6 +64,7 @@ public class Bastion : MonoBehaviour {
     public void MoveOut() {
         _homeEnergy = 0f;
         _hasFamily.Value = false;
+        _emptied = true;
         _onMoveOut.Invoke();
         _onFamilyMoved.Raise();
     }
@@ -68,10 +77,11 @@ public class Bastion : MonoBehaviour {
     [SerializeField] BastionReference _currentBastion;
     [SerializeField] BoolReference _hasFamily;
     [SerializeField] BoolReference _allowsFamily;
+    [SerializeField] BoolReference _finalHome;
     [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] GameEvent _onFamilyMoved;
-    [SerializeField] UnityEvent _onEnter;
-    [SerializeField] UnityEvent _onExit;
+    [SerializeField] BastionEvent _onEnter;
+    [SerializeField] BastionEvent _onExit;
     [SerializeField] UnityEvent _onTurnOn;
     [SerializeField] UnityEvent _onTurnOff;
     [SerializeField] UnityEvent _onMoveIn;
@@ -90,7 +100,8 @@ public class Bastion : MonoBehaviour {
     #endregion
 
     #region Private
-    [SerializeField] float _homeEnergy = 0f;
+    float _homeEnergy = 0f;
+    bool _emptied = false;
 
     void ReduceLight(float amount) {
         _homeEnergy -= amount;

@@ -24,10 +24,10 @@ public class ResourcePicker : MonoBehaviour {
       if (_carryingResource.Value && !bastion.HasLight) {
         _carryingResource.Value = false;
         bastion.TurnLight();
+        _targetBastion.Value = !bastion.HasFamily && bastion.AllowFamily ? bastion : _targetBastion.Value;
 
         if (_resourceUsed != null) {
           _resourceUsed.Raise();
-          _targetBastion.Value = bastion;
         }
       }
     }

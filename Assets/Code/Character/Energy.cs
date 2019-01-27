@@ -63,7 +63,7 @@ public class Energy : MonoBehaviour {
         _deltaPosition = (transform.position - _oldPosition).magnitude;
         _oldPosition = transform.position;
 
-        if (_charging) {
+        if (_charging && _currentBastion != null) {
             _currentEnergy.Value += _currentBastion.GiveLight(_currentEnergy.Value);
         }
 
