@@ -9,8 +9,6 @@ public class ColliderTriggerEvents : MonoBehaviour {
   [SerializeField] ColliderEvent _onExit;
   [SerializeField] StringReference _targetLayer;
 
-  [System.Serializable]
-  public class ColliderEvent : UnityEvent<Collider> {}
 
   void OnTriggerEnter(Collider collider) {
     //Debug.LogFormat("Enter {0}", LayerMask.LayerToName(collider.gameObject.layer));
@@ -26,3 +24,6 @@ public class ColliderTriggerEvents : MonoBehaviour {
   }
   #endregion
 }
+
+[System.Serializable]
+public class ColliderEvent : UnityEvent<Collider> {}
