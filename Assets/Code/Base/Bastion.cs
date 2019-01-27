@@ -15,6 +15,10 @@ public class Bastion : MonoBehaviour {
         get { return _hasFamily.Value; }
     }
 
+    public bool AllowFamily {
+        get { return _allowsFamily.Value; }
+    }
+
     public void Enter() {
         _onEnter.Invoke();
     }
@@ -69,6 +73,7 @@ public class Bastion : MonoBehaviour {
     [SerializeField] FloatReference _currentBastionEnergy;
     [SerializeField] BastionReference _currentBastion;
     [SerializeField] BoolReference _hasFamily;
+    [SerializeField] BoolReference _allowsFamily;
     [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] GameEvent _onFamilyMoved;
     [SerializeField] UnityEvent _onEnter;

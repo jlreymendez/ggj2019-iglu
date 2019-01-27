@@ -17,6 +17,12 @@ public class BaseMover : MonoBehaviour {
       ) {
         return;
       }
+
+      // TODO: If target bastion doesn't allow family inform?
+      if (!_targetBastion.Value.AllowFamily) {
+        return;
+      }
+
       _currentBastion.Value.MoveOut();
       _targetBastion.Value.MoveIn();
       _currentBastion.Value = _targetBastion;

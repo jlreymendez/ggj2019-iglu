@@ -8,9 +8,7 @@ public class ResourcePicker : MonoBehaviour {
     #region Public
     public void PickResource(Collider collider) {
       // If player is not carrying resource grab it.
-      Debug.Log("Pick");
       if (!_carryingResource.Value) {
-      Debug.Log("Picked");
         _carryingResource.Value = true;
         Destroy(collider.gameObject);
 

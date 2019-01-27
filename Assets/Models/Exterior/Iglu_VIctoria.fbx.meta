@@ -241,17 +241,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BlancoIglu
-    second: {fileID: 2100000, guid: 9a4c25412e7165e4b9218d48fe78545e, type: 2}
+    second: {fileID: 2100000, guid: ec25baf0b66ee0846ad3ffea3b145a07, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: 90370cd3d04cc074ab621433ba5d42bd, type: 2}
+    second: {fileID: 2100000, guid: ec25baf0b66ee0846ad3ffea3b145a07, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: ab9934c31c225494ab1848a5ab3ec0a8, type: 2}
+    second: {fileID: 2100000, guid: ec25baf0b66ee0846ad3ffea3b145a07, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
