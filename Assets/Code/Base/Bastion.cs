@@ -90,7 +90,7 @@ public class Bastion : MonoBehaviour {
     #endregion
 
     #region Private
-    float _homeEnergy = 0f;
+    [SerializeField] float _homeEnergy = 0f;
 
     void ReduceLight(float amount) {
         _homeEnergy -= amount;
