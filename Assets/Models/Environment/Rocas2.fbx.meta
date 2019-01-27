@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71fa7c4b999a2c340b883aedc3eed4e1
+guid: a5f1f0fc663524e509b2a5bc52d5761b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: Roca
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube.015
+    4300000: Cube.002
   externalObjects: {}
   materials:
     importMaterials: 1
