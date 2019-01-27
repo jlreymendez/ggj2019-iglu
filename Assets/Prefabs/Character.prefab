@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 7845952157442273870}
   - component: {fileID: 8265853507967083306}
   - component: {fileID: 2261121517880296956}
-  - component: {fileID: 6576247395735048077}
   - component: {fileID: 7091356973495157507}
   - component: {fileID: 7043270389217936764}
   - component: {fileID: 350530218341738303}
@@ -224,8 +223,9 @@ GameObject:
   - component: {fileID: 2182644576846316976}
   - component: {fileID: 2182644576846316975}
   - component: {fileID: 7657017940903026684}
+  - component: {fileID: 5730480717367880202}
   m_Layer: 9
-  m_Name: Character
+  m_Name: Character_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,22 +331,6 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: 5440152f8487eb5429510ee90a31ea92, type: 2}
   _energyOutEvent: {fileID: 11400000, guid: 31d02c668663fe3478705bb111005d74, type: 2}
   _resourceUsedEvent: {fileID: 11400000, guid: 8ec1c100d2d84d54d9318e06c2fde004, type: 2}
---- !u!114 &6576247395735048077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2182644576846316974}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186a7f55a534edc4bbb2254dc0748d0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed:
-    _useConstant: 1
-    _constantValue: 1
-    _variable: {fileID: 0}
 --- !u!114 &7091356973495157507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,17 +464,6 @@ MonoBehaviour:
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2261121517880296956}
-        m_MethodName: StopDrain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8968003545340774027}
         m_MethodName: SetActive
         m_Mode: 6
@@ -599,17 +572,6 @@ MonoBehaviour:
   _onEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2261121517880296956}
-        m_MethodName: Recover
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 350530218341738303}
         m_MethodName: UseResource
         m_Mode: 0
@@ -621,8 +583,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2261121517880296956}
+        m_MethodName: EnterBase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7043270389217936764}
         m_MethodName: MoveBase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5730480717367880202}
+        m_MethodName: EnterBase
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -648,6 +632,28 @@ MonoBehaviour:
   _onExit:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5730480717367880202}
+        m_MethodName: ExitBase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2261121517880296956}
+        m_MethodName: ExitBase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7657017940903026684}
         m_MethodName: LeaveHouse
         m_Mode: 0
@@ -697,8 +703,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2261121517880296956}
-        m_MethodName: StartDrain
-        m_Mode: 1
+        m_MethodName: ExitBaseArea
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -770,6 +776,18 @@ MonoBehaviour:
   _playerEnterBastion: {fileID: 11400000, guid: a16cf6c0d367d4f04843a8e354bd7b3b,
     type: 2}
   _playerLeaveHouse: {fileID: 11400000, guid: 38d39f7c9a1ae4f6fa08640d5b68ca8b, type: 2}
+--- !u!114 &5730480717367880202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182644576846316974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0fff9e03310bc48a08e76b0b697dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6576247395419797495
 GameObject:
   m_ObjectHideFlags: 0
