@@ -116,7 +116,7 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: 21300002, guid: 2ef32a1bafdb64d00a1c68c083fc7cb8, type: 3}
     attribute: m_Sprite
-    path: Graphics
+    path: AllGraphics/Graphics
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -125,7 +125,7 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: 21300006, guid: 2ef32a1bafdb64d00a1c68c083fc7cb8, type: 3}
     attribute: m_Sprite
-    path: GraphicsCarry
+    path: AllGraphics/GraphicsCarry
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 6
