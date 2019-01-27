@@ -179,15 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_Target
-      value: 
-      objectReference: {fileID: 867060175}
-    - target: {fileID: 2182644576846316977, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: _onExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 1721029064}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
 --- !u!1001 &80228560
@@ -863,12 +854,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768501505}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &867060175 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1655028282717202123, guid: 9b7aff99bcc414706a5a21ac372693e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 241960738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918337859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,12 +1178,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 147646655881633108, guid: f6648e1ba9369f14f87ca4151a566a3c,
     type: 3}
   m_PrefabInstance: {fileID: 1554750944}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1721029064 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 573111369, guid: 28a63a8df6c50d448a2af02d6a824bda,
-    type: 3}
-  m_PrefabInstance: {fileID: 7866535503052098980}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1802248844
 GameObject:
