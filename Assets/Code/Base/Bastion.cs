@@ -15,6 +15,10 @@ public class Bastion : MonoBehaviour {
         get { return _hasFamily.Value; }
     }
 
+    public bool AllowFamily {
+        get { return _allowsFamily.Value; }
+    }
+
     public void Enter() {
         _onEnter.Invoke();
     }
@@ -36,21 +40,16 @@ public class Bastion : MonoBehaviour {
             return 0f;
         }
 
-        var reduction = Mathf.Min(1 - currentLight, _homeEnergy);
-        _homeEnergy -= reduction;
-        if (_homeEnergy <= 0f) {
-            _onTurnOff.Invoke();
-            if (HasFamily) {
-                _hasFamily.Value = false;
-                _onFamilyDied.Raise();
-            }
-        }
+        var reduction = _energyOutput * Time.deltaTime;
+        reduction = Mathf.Min(reduction, Mathf.Min(1 - currentLight, _homeEnergy));
+        ReduceLight(reduction);
 
         return reduction;
     }
 
     public void MoveIn() {
         _hasFamily.Value = true;
+        _currentBastionEnergy.Value = _homeEnergy  / _maxEnergy;
         _onMoveIn.Invoke();
     }
 
@@ -64,8 +63,11 @@ public class Bastion : MonoBehaviour {
 
     #region UnityAPI
     [SerializeField] FloatReference _maxEnergy;
+    [SerializeField] FloatReference _energyOutput;
+    [SerializeField] FloatReference _currentBastionEnergy;
     [SerializeField] BastionReference _currentBastion;
     [SerializeField] BoolReference _hasFamily;
+    [SerializeField] BoolReference _allowsFamily;
     [SerializeField] GameEvent _onFamilyDied;
     [SerializeField] GameEvent _onFamilyMoved;
     [SerializeField] UnityEvent _onEnter;
@@ -78,6 +80,7 @@ public class Bastion : MonoBehaviour {
     void Awake() {
         if (_hasFamily) {
             _currentBastion.Value = this;
+            _currentBastionEnergy.Value = _homeEnergy;
         }
     }
 
@@ -87,6 +90,19 @@ public class Bastion : MonoBehaviour {
     #endregion
 
     #region Private
-    float _homeEnergy = 0f;
+    [SerializeField] float _homeEnergy = 0f;
+
+    void ReduceLight(float amount) {
+        _homeEnergy -= amount;
+        _currentBastionEnergy.Value = _homeEnergy / _maxEnergy;
+
+        if (_homeEnergy <= 0f) {
+            _onTurnOff.Invoke();
+            if (HasFamily) {
+                _hasFamily.Value = false;
+                _onFamilyDied.Raise();
+            }
+        }
+    }
     #endregion
 }

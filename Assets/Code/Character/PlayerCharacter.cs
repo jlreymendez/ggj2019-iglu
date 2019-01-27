@@ -21,10 +21,12 @@ public class PlayerCharacter : MonoBehaviour
     private Vector3 lastMoveDir = Vector3.zero;
     private string lastState = PLAYER_START;
     private Animator animator;
+    private Rigidbody _rigidbody;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
 
         //Default state
         animator.Play(PLAYER_IDLE_RIGHT_DOWN);
@@ -34,7 +36,7 @@ public class PlayerCharacter : MonoBehaviour
     private void Update()
     {
         if(!lastState.Equals(PLAYER_DEAD))
-        { 
+        {
             handleMovement();
         }
     }
@@ -47,13 +49,15 @@ public class PlayerCharacter : MonoBehaviour
 
     private void handleMovement()
     {
+        _rigidbody.velocity = Vector3.zero;
         float hMove = Input.GetAxis("Horizontal");
         float vMove = Input.GetAxis("Vertical");
 
         bool isIdle = Mathf.Abs(hMove) < EPSILON && Mathf.Abs(vMove) < EPSILON;
         Vector3 moveDir = new Vector3(hMove, 0, vMove).normalized;
         PlayAnimator(moveDir);
-        transform.position += moveDir * speed * Time.deltaTime;
+        Vector3 newPosition = transform.position + moveDir * speed * Time.deltaTime;
+        _rigidbody.MovePosition(newPosition);
     }
 
     private void PlayAnimator(Vector3 animatorDir)
@@ -114,7 +118,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    private void AnimateRightDown() 
+    private void AnimateRightDown()
     {
         if (!lastState.Equals(PLAYER_MOVE_RIGHT_DOWN))
         {
@@ -123,7 +127,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    private void AnimateLeftUp() 
+    private void AnimateLeftUp()
     {
         if (!lastState.Equals(PLAYER_MOVE_LEFT_UP))
         {
@@ -132,7 +136,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    private void AnimateLeftDown() 
+    private void AnimateLeftDown()
     {
         if (!lastState.Equals(PLAYER_MOVE_LEFT_DOWN))
         {
@@ -147,7 +151,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             animator.Play(PLAYER_MOVE_RIGHT_DOWN);
             lastState = PLAYER_MOVE_RIGHT_DOWN;
-        }else 
+        }else
         {
             animator.Play(PLAYER_MOVE_RIGHT_UP);
             lastState = PLAYER_MOVE_RIGHT_UP;
@@ -161,7 +165,7 @@ public class PlayerCharacter : MonoBehaviour
             animator.Play(PLAYER_MOVE_LEFT_DOWN);
             lastState = PLAYER_MOVE_LEFT_DOWN;
         }
-        else 
+        else
         {
             animator.Play(PLAYER_MOVE_LEFT_UP);
             lastState = PLAYER_MOVE_LEFT_UP;
@@ -175,7 +179,7 @@ public class PlayerCharacter : MonoBehaviour
             animator.Play(PLAYER_MOVE_RIGHT_UP);
             lastState = PLAYER_MOVE_RIGHT_UP;
         }
-        else 
+        else
         {
             animator.Play(PLAYER_MOVE_LEFT_UP);
             lastState = PLAYER_MOVE_LEFT_UP;
@@ -203,7 +207,7 @@ public class PlayerCharacter : MonoBehaviour
             !lastState.Equals(PLAYER_IDLE_RIGHT_UP) &&
             !lastState.Equals(PLAYER_IDLE_RIGHT_DOWN))
         {
-            if (lastMoveDir.x < -EPSILON && lastMoveDir.z > EPSILON) 
+            if (lastMoveDir.x < -EPSILON && lastMoveDir.z > EPSILON)
             {
             animator.Play(PLAYER_IDLE_LEFT_UP);
                 lastState = PLAYER_IDLE_LEFT_UP;

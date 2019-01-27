@@ -1,66 +1,66 @@
 fileFormatVersion: 2
-guid: 2de114f5f9efd0842b6b0566b9170020
+guid: 2a808c20973b92b49b1c4fef31fe3dea
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cone.001
-    100002: Cone.003
-    100004: Cone.004
-    100006: Cone.005
-    100008: Cone.006
-    100010: Cone.007
-    100012: Cone.008
-    100014: Cone.009
-    100016: Cube.000
-    100018: Cube.001
-    100020: Cube.003
-    100022: Cube.008
-    100024: Cube.009
-    100026: Cube.010
-    100028: Cube.011
-    100030: Cube.012
-    100032: Cube.013
-    100034: Cube.014
-    100036: Cylinder
-    100038: Cylinder.001
-    100040: Cylinder.002
-    100042: Cylinder.003
-    100044: Gear.001
-    100046: Icosphere
-    100048: Icosphere.001
-    100050: //RootNode
-    100052: Sphere.001
-    400000: Cone.001
-    400002: Cone.003
-    400004: Cone.004
-    400006: Cone.005
-    400008: Cone.006
-    400010: Cone.007
-    400012: Cone.008
-    400014: Cone.009
-    400016: Cube.000
-    400018: Cube.001
-    400020: Cube.003
-    400022: Cube.008
-    400024: Cube.009
-    400026: Cube.010
-    400028: Cube.011
-    400030: Cube.012
-    400032: Cube.013
-    400034: Cube.014
-    400036: Cylinder
-    400038: Cylinder.001
-    400040: Cylinder.002
-    400042: Cylinder.003
-    400044: Gear.001
-    400046: Icosphere
-    400048: Icosphere.001
-    400050: //RootNode
-    400052: Sphere.001
+    100000: //RootNode
+    100002: Cone.001
+    100004: Cone.003
+    100006: Cone.004
+    100008: Cone.005
+    100010: Cone.006
+    100012: Cone.007
+    100014: Cone.008
+    100016: Cone.009
+    100018: Cube.000
+    100020: Cube.001
+    100022: Cube.003
+    100024: Cube.008
+    100026: Cube.009
+    100028: Cube.010
+    100030: Cube.011
+    100032: Cube.012
+    100034: Cube.013
+    100036: Cube.015
+    100038: Cylinder.000
+    100040: Cylinder.001
+    100042: Cylinder.002
+    100044: Cylinder.003
+    100046: Empty
+    100048: Gear.001
+    100050: Icosphere.001
+    100052: Sphere.002
+    400000: //RootNode
+    400002: Cone.001
+    400004: Cone.003
+    400006: Cone.004
+    400008: Cone.005
+    400010: Cone.006
+    400012: Cone.007
+    400014: Cone.008
+    400016: Cone.009
+    400018: Cube.000
+    400020: Cube.001
+    400022: Cube.003
+    400024: Cube.008
+    400026: Cube.009
+    400028: Cube.010
+    400030: Cube.011
+    400032: Cube.012
+    400034: Cube.013
+    400036: Cube.015
+    400038: Cylinder.000
+    400040: Cylinder.001
+    400042: Cylinder.002
+    400044: Cylinder.003
+    400046: Empty
+    400048: Gear.001
+    400050: Icosphere.001
+    400052: Sphere.002
     2100000: Roca
-    2100002: No Name
-    2100004: BlancoIglu
-    2100006: Material
+    2100002: Material
+    2100004: No Name
+    2100006: BlancoIglu
     2300000: Cone.001
     2300002: Cone.003
     2300004: Cone.004
@@ -78,15 +78,14 @@ ModelImporter:
     2300028: Cube.011
     2300030: Cube.012
     2300032: Cube.013
-    2300034: Cube.014
-    2300036: Cylinder
+    2300034: Cube.015
+    2300036: Cylinder.000
     2300038: Cylinder.001
     2300040: Cylinder.002
     2300042: Cylinder.003
     2300044: Gear.001
-    2300046: Icosphere
-    2300048: Icosphere.001
-    2300050: Sphere.001
+    2300046: Icosphere.001
+    2300048: Sphere.002
     3300000: Cone.001
     3300002: Cone.003
     3300004: Cone.004
@@ -104,41 +103,39 @@ ModelImporter:
     3300028: Cube.011
     3300030: Cube.012
     3300032: Cube.013
-    3300034: Cube.014
-    3300036: Cylinder
+    3300034: Cube.015
+    3300036: Cylinder.000
     3300038: Cylinder.001
     3300040: Cylinder.002
     3300042: Cylinder.003
     3300044: Gear.001
-    3300046: Icosphere
-    3300048: Icosphere.001
-    3300050: Sphere.001
-    4300000: Cube.003
-    4300002: Sphere.001
-    4300004: Gear.001
-    4300006: Cone.009
-    4300008: Cone.008
-    4300010: Cone.007
-    4300012: Cone.006
-    4300014: Cone.005
-    4300016: Cone.004
-    4300018: Cone.003
-    4300020: Cube.013
-    4300022: Cube.012
-    4300024: Cube.011
-    4300026: Cube.010
-    4300028: Cube.009
-    4300030: Cube.008
-    4300032: Cone.001
-    4300034: Cylinder.001
-    4300036: Cube.001
-    4300038: Cube.000
-    4300040: Cube.014
-    4300042: Icosphere.001
-    4300044: Cylinder.003
-    4300046: Cylinder.002
-    4300048: Cylinder
-    4300050: Icosphere
+    3300046: Icosphere.001
+    3300048: Sphere.002
+    4300000: Sphere.002
+    4300002: Cylinder.000
+    4300004: Cube.015
+    4300006: Cube.003
+    4300008: Gear.001
+    4300010: Cone.009
+    4300012: Cone.008
+    4300014: Cone.007
+    4300016: Cone.006
+    4300018: Cone.005
+    4300020: Cone.004
+    4300022: Cone.003
+    4300024: Cube.013
+    4300026: Cube.012
+    4300028: Cube.011
+    4300030: Cube.010
+    4300032: Cube.009
+    4300034: Cube.008
+    4300036: Cone.001
+    4300038: Cylinder.001
+    4300040: Cube.001
+    4300042: Cube.000
+    4300044: Icosphere.001
+    4300046: Cylinder.003
+    4300048: Cylinder.002
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -159,7 +156,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Roca
-    second: {fileID: 2100000, guid: 888a8a19eab0cab469655075eb3ce31e, type: 2}
+    second: {fileID: 2100000, guid: ec25baf0b66ee0846ad3ffea3b145a07, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -215,7 +212,7 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

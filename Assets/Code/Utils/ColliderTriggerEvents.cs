@@ -13,7 +13,7 @@ public class ColliderTriggerEvents : MonoBehaviour {
   public class ColliderEvent : UnityEvent<Collider> {}
 
   void OnTriggerEnter(Collider collider) {
-    Debug.LogFormat("Enter {0}", LayerMask.LayerToName(collider.gameObject.layer));
+    //Debug.LogFormat("Enter {0}", LayerMask.LayerToName(collider.gameObject.layer));
     if (collider.gameObject.layer == LayerMask.NameToLayer(_targetLayer.Value)) {
       _onEnter.Invoke(collider);
     }
