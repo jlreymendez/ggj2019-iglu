@@ -43,6 +43,14 @@ public class Bastion : MonoBehaviour {
         _onTurnOn.Invoke();
     }
 
+    public void TurnOff() {
+        if (HasLight) { return; }
+
+        _homeEnergy = 0f;
+
+        _onTurnOff.Invoke();
+    }
+
     public float GiveLight(float currentLight) {
         if (!HasFamily || !HasLight) {
             return 0f;
