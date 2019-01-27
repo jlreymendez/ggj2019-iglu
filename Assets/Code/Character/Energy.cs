@@ -18,11 +18,14 @@ public class Energy : MonoBehaviour {
     public void EnterBase(Collider collider) {
         // Check the state of the base.
         var bastion = collider.GetComponentInParent<Bastion>();
-        _currentEnergy.Value += bastion.GiveLight(_currentEnergy.Value);
+        _charging = true;
+        _currentBastion = bastion;
         _draining = false;
     }
 
     public void ExitBase(Collider collider) {
+        _charging = false;
+        _currentBastion = null;
         var bastion = collider.GetComponentInParent<Bastion>();
         if (!bastion.HasLight) {
             _draining = true;
@@ -60,6 +63,10 @@ public class Energy : MonoBehaviour {
         _deltaPosition = (transform.position - _oldPosition).magnitude;
         _oldPosition = transform.position;
 
+        if (_charging) {
+            _currentEnergy.Value += _currentBastion.GiveLight(_currentEnergy.Value);
+        }
+
         if (!_draining) { return; }
 
         if (_timeLoss) {
@@ -76,8 +83,10 @@ public class Energy : MonoBehaviour {
 
     #region Private
     bool _draining = false;
+    bool _charging = true;
     float _deltaPosition;
     Vector3 _oldPosition;
+    Bastion _currentBastion;
 
     void TimeLoss() {
         _currentEnergy.Value -= _drainSpeed.Value * Time.deltaTime;

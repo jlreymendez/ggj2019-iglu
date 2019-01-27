@@ -40,16 +40,9 @@ public class Bastion : MonoBehaviour {
             return 0f;
         }
 
-        var reduction = Mathf.Min(1 - currentLight, _homeEnergy);
-        _homeEnergy -= reduction;
-        _currentBastionEnergy.Value = _homeEnergy / _maxEnergy;
-        if (_homeEnergy <= 0f) {
-            _onTurnOff.Invoke();
-            if (HasFamily) {
-                _hasFamily.Value = false;
-                _onFamilyDied.Raise();
-            }
-        }
+        var reduction = _energyOutput * Time.deltaTime;
+        reduction = Mathf.Min(reduction, Mathf.Min(1 - currentLight, _homeEnergy));
+        ReduceLight(reduction);
 
         return reduction;
     }
@@ -70,6 +63,7 @@ public class Bastion : MonoBehaviour {
 
     #region UnityAPI
     [SerializeField] FloatReference _maxEnergy;
+    [SerializeField] FloatReference _energyOutput;
     [SerializeField] FloatReference _currentBastionEnergy;
     [SerializeField] BastionReference _currentBastion;
     [SerializeField] BoolReference _hasFamily;
@@ -97,5 +91,18 @@ public class Bastion : MonoBehaviour {
 
     #region Private
     float _homeEnergy = 0f;
+
+    void ReduceLight(float amount) {
+        _homeEnergy -= amount;
+        _currentBastionEnergy.Value = _homeEnergy / _maxEnergy;
+
+        if (_homeEnergy <= 0f) {
+            _onTurnOff.Invoke();
+            if (HasFamily) {
+                _hasFamily.Value = false;
+                _onFamilyDied.Raise();
+            }
+        }
+    }
     #endregion
 }

@@ -218,6 +218,10 @@ MonoBehaviour:
     _useConstant: 1
     _constantValue: 3
     _variable: {fileID: 0}
+  _energyOutput:
+    _useConstant: 1
+    _constantValue: 0.25
+    _variable: {fileID: 0}
   _currentBastionEnergy:
     _useConstant: 0
     _constantValue: 0
