@@ -179,26 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2713578157905397436, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713578157905397436, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
 --- !u!1001 &80228560
@@ -212,11 +192,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TinyBastion
-      objectReference: {fileID: 0}
-    - target: {fileID: 4869933526393583818, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5667947844578581451, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
         type: 3}
@@ -271,11 +246,6 @@ PrefabInstance:
     - target: {fileID: 5667947844578581451, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2409460023508400791, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -369,6 +339,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7999455467273822747, guid: 9b7aff99bcc414706a5a21ac372693e8,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243737713022856482, guid: 8fff25eb9dbc08e43a11e969806fa61b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b7aff99bcc414706a5a21ac372693e8, type: 3}
 --- !u!1001 &354780978
@@ -518,16 +494,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2409460023508400791, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5008103921030883970, guid: 53861d60c5cc6c04f8cf0ae268e56a18,
-        type: 3}
-      propertyPath: _homeEnergy
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53861d60c5cc6c04f8cf0ae268e56a18, type: 3}
 --- !u!1001 &610795044
@@ -595,11 +561,6 @@ PrefabInstance:
     - target: {fileID: 5524016703618115266, guid: acf5552b3b9dfae41bfda16bc7bd16d1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166026373102894134, guid: acf5552b3b9dfae41bfda16bc7bd16d1,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1009,6 +970,10 @@ PrefabInstance:
     - target: {fileID: 73550722, guid: b2fdd91679d4b46fdb2bbda54d5885a8, type: 3}
       propertyPath: m_LocalPosition.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 73550722, guid: b2fdd91679d4b46fdb2bbda54d5885a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2fdd91679d4b46fdb2bbda54d5885a8, type: 3}
