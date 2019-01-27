@@ -179,6 +179,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2713578157905397436, guid: d23113b47b6f08e41890db0afd46156d,
         type: 3}
       propertyPath: m_IsKinematic
@@ -189,15 +199,29 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
-    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.4
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.size
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 8265853507967083306, guid: d23113b47b6f08e41890db0afd46156d,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.4
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 867060175}
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533906739, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
+      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23113b47b6f08e41890db0afd46156d, type: 3}
@@ -358,6 +382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999455466987529144, guid: 9b7aff99bcc414706a5a21ac372693e8,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7999455466879610965, guid: 9b7aff99bcc414706a5a21ac372693e8,
         type: 3}
@@ -597,11 +626,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 166026373102894134, guid: acf5552b3b9dfae41bfda16bc7bd16d1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5371496910135971680, guid: acf5552b3b9dfae41bfda16bc7bd16d1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -647,6 +671,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ec25baf0b66ee0846ad3ffea3b145a07, type: 2}
+    - target: {fileID: 166026373102894134, guid: acf5552b3b9dfae41bfda16bc7bd16d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf5552b3b9dfae41bfda16bc7bd16d1, type: 3}
 --- !u!1001 &662742146
@@ -884,6 +913,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768501505}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &867060175 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1655028282717202123, guid: 9b7aff99bcc414706a5a21ac372693e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 241960738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918337859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1875,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 573111369, guid: 28a63a8df6c50d448a2af02d6a824bda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573111372, guid: 28a63a8df6c50d448a2af02d6a824bda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a63a8df6c50d448a2af02d6a824bda, type: 3}
