@@ -294,14 +294,15 @@ GameObject:
   - component: {fileID: 7091356973495157507}
   - component: {fileID: 7043270389217936764}
   - component: {fileID: 350530218341738303}
+  - component: {fileID: 7657017940903026684}
+  - component: {fileID: 5730480717367880202}
   - component: {fileID: 1533906739}
   - component: {fileID: 7859477197535063616}
   - component: {fileID: 8256944474179170558}
   - component: {fileID: 2182644576846316977}
   - component: {fileID: 2182644576846316976}
   - component: {fileID: 2182644576846316975}
-  - component: {fileID: 7657017940903026684}
-  - component: {fileID: 5730480717367880202}
+  - component: {fileID: 6870178083931364301}
   m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
@@ -466,6 +467,38 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: a8b3ccd751d88ed4bb2e84b3464660db, type: 2}
   _resourcePicked: {fileID: 11400000, guid: 328e3d0eb88c4634ba1464d6bf22c91e, type: 2}
   _resourceUsed: {fileID: 11400000, guid: 8ec1c100d2d84d54d9318e06c2fde004, type: 2}
+--- !u!114 &7657017940903026684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182644576846316974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fba21a024b054f3f853b8d7ca038c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentBastion:
+    _useConstant: 0
+    _constantValue: {fileID: 0}
+    _variable: {fileID: 11400000, guid: 4d85475e303a58b4792dd625475ebfbf, type: 2}
+  _playerEnterHouse: {fileID: 11400000, guid: d360891c13fb24619a5be419f606e252, type: 2}
+  _playerEnterBastion: {fileID: 11400000, guid: a16cf6c0d367d4f04843a8e354bd7b3b,
+    type: 2}
+  _playerLeaveHouse: {fileID: 11400000, guid: 38d39f7c9a1ae4f6fa08640d5b68ca8b, type: 2}
+--- !u!114 &5730480717367880202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182644576846316974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0fff9e03310bc48a08e76b0b697dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1533906739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,17 +678,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7043270389217936764}
-        m_MethodName: MoveBase
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 5730480717367880202}
         m_MethodName: EnterBase
         m_Mode: 0
@@ -807,7 +829,7 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 
     _variable: {fileID: 11400000, guid: 0cdb02f0874098c4fbaa8550d694a24b, type: 2}
---- !u!114 &7657017940903026684
+--- !u!114 &6870178083931364301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -816,29 +838,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 2182644576846316974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fba21a024b054f3f853b8d7ca038c11, type: 3}
+  m_Script: {fileID: 11500000, guid: c6c5659203fd2a741b4296b066853758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentBastion:
+  _onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7043270389217936764}
+        m_MethodName: MoveBase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: ColliderTriggerEvents+ColliderEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _onExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ColliderTriggerEvents+ColliderEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _targetLayer:
     _useConstant: 0
-    _constantValue: {fileID: 0}
-    _variable: {fileID: 11400000, guid: 4d85475e303a58b4792dd625475ebfbf, type: 2}
-  _playerEnterHouse: {fileID: 11400000, guid: d360891c13fb24619a5be419f606e252, type: 2}
-  _playerEnterBastion: {fileID: 11400000, guid: a16cf6c0d367d4f04843a8e354bd7b3b,
-    type: 2}
-  _playerLeaveHouse: {fileID: 11400000, guid: 38d39f7c9a1ae4f6fa08640d5b68ca8b, type: 2}
---- !u!114 &5730480717367880202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2182644576846316974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea0fff9e03310bc48a08e76b0b697dea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    _constantValue: 
+    _variable: {fileID: 11400000, guid: d0334806dbf5f4a4990238b5c9056cef, type: 2}
 --- !u!1 &6576247395419797495
 GameObject:
   m_ObjectHideFlags: 0
