@@ -126,12 +126,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _onTurnOn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7913964125006183432}
+      objectReference: {fileID: 2803052689890861347}
     - target: {fileID: 6915833623117506113, guid: 16e3b700a00697b459eed8dd4191b7a1,
         type: 3}
       propertyPath: _onTurnOff.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7913964125006183432}
+      objectReference: {fileID: 2803052689890861347}
     - target: {fileID: 6915833623117506113, guid: 16e3b700a00697b459eed8dd4191b7a1,
         type: 3}
       propertyPath: _onMoveIn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 4807028381946020387, guid: 16e3b700a00697b459eed8dd4191b7a1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6450073904058191670, guid: 16e3b700a00697b459eed8dd4191b7a1,
         type: 3}
@@ -214,6 +214,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e3b700a00697b459eed8dd4191b7a1, type: 3}
+--- !u!1 &2803052689890861347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8087272177451592575, guid: 16e3b700a00697b459eed8dd4191b7a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6259355472432925276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7913964125006183432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4254141134687614548, guid: 16e3b700a00697b459eed8dd4191b7a1,
