@@ -33,7 +33,11 @@ public class PlayerCharacter : MonoBehaviour
         lastState = PLAYER_IDLE_RIGHT_DOWN;
     }
 
-    private void Update()
+    void OnDisable() {
+        AnimateIdle();
+    }
+
+    private void FixedUpdate()
     {
         if(!lastState.Equals(PLAYER_DEAD))
         {

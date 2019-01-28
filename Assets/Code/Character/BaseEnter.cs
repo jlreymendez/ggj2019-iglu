@@ -10,6 +10,11 @@ public class BaseEnter : MonoBehaviour {
     public void EnterBase(Collider collider) {
       var bastion = collider.GetComponentInParent<Bastion>();
       bastion.Enter();
+
+      if (bastion.HasFamily && bastion.FinalHome) {
+        _gameOverEvent.Raise();
+      }
+
       _onEnter.Invoke(bastion);
     }
 
@@ -23,6 +28,8 @@ public class BaseEnter : MonoBehaviour {
     #region UnityAPI
     [SerializeField] BastionEvent _onEnter;
     [SerializeField] BastionEvent _onExit;
+
+    [SerializeField] GameEvent _gameOverEvent;
     #endregion
 }
 
