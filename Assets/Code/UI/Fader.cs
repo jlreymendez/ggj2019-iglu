@@ -6,8 +6,8 @@ using Ludilo;
 public class Fader : MonoBehaviour {
 
   public void StartFade() {
+    Debug.LogFormat("{0}: Start fader", name, _fading);
     _fading = true;
-    Evaluate();
   }
 
   [SerializeField] AnimationCurve _fadeCurve;
@@ -15,24 +15,34 @@ public class Fader : MonoBehaviour {
   [SerializeField] BoolReference _invert;
 
   void Awake() {
-    _targets = GetComponentsInChildren<Graphic>();
+    var targets = GetComponentsInChildren<Graphic>();
+    _targets = new FadeTarget[targets.Length];
+    for (var i = 0; i < targets.Length; i++) {
+      _targets[i] = new FadeTarget { graphic = targets[i], alpha = targets[i].color.a };
+    }
   }
 
   void Update() {
+    Debug.LogFormat("{0}: Fader is fading {1}", name, _fading);
     if (!_fading) { return; }
     Evaluate();
   }
 
   public void Evaluate() {
     var alpha = _fadeCurve.Evaluate(_invert.Value ? 1 - _variable.Value : _variable.Value);
-    foreach (var graphic in _targets) {
-      var color = graphic.color;
-      color.a = alpha;
-      graphic.color = color;
+    foreach (var target in _targets) {
+      var color = target.graphic.color;
+      color.a = alpha * target.alpha;
+      target.graphic.color = color;
     }
   }
 
 
   bool _fading = false;
-  Graphic[] _targets;
+  FadeTarget[] _targets;
+
+  public struct FadeTarget {
+    public Graphic graphic;
+    public float alpha;
+  }
 }

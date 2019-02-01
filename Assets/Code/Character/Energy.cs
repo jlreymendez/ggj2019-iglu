@@ -77,6 +77,7 @@ public class Energy : MonoBehaviour {
 
         if (_currentEnergy.Value <= 0) {
             _energyOutEvent.Raise();
+            enabled = false;
         }
     }
     #endregion

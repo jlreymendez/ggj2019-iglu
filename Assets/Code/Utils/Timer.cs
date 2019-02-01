@@ -27,8 +27,12 @@ public class Timer : MonoBehaviour {
     _timerVariable.Value = Mathf.Max(_timerVariable - Time.deltaTime, 0);
     _percentVariable.Value = 1 - _timerVariable / _timeToTrigger;
 
-    if (_timerVariable.Value == 0 && _delayedEvent != null) {
-      _delayedEvent.Raise();
+    if (_timerVariable.Value < 0) {
+      _counting = false;
+
+      if (_delayedEvent != null) {
+        _delayedEvent.Raise();
+      }
     }
   }
 

@@ -363,6 +363,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 4720b05c98e3db4479c09390badb36f5, type: 2}
+  _maxAlpha:
+    _useConstant: 1
+    _constantValue: 1
+    _variable: {fileID: 0}
   _invert:
     _useConstant: 1
     _constantValue: 0
@@ -454,6 +458,7 @@ GameObject:
   - component: {fileID: 4900740054641079567}
   - component: {fileID: 3046144357939017938}
   - component: {fileID: 3826873449246244026}
+  - component: {fileID: 650915031}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -582,6 +587,35 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &650915031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900740054641079565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce7a1f618528f84191fc54fd9454d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 38d39f7c9a1ae4f6fa08640d5b68ca8b, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7770387825110513990}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &4900740054893092890
 GameObject:
   m_ObjectHideFlags: 0
