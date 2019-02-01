@@ -44,10 +44,7 @@ public class Bastion : MonoBehaviour {
     }
 
     public void TurnOff() {
-        if (HasLight) { return; }
-
         _homeEnergy = 0f;
-
         _onTurnOff.Invoke();
     }
 
