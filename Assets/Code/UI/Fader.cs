@@ -6,7 +6,6 @@ using Ludilo;
 public class Fader : MonoBehaviour {
 
   public void StartFade() {
-    Debug.LogFormat("{0}: Start fader", name, _fading);
     _fading = true;
   }
 
@@ -19,16 +18,18 @@ public class Fader : MonoBehaviour {
     _targets = new FadeTarget[targets.Length];
     for (var i = 0; i < targets.Length; i++) {
       _targets[i] = new FadeTarget { graphic = targets[i], alpha = targets[i].color.a };
+      var color = targets[i].color;
+      color.a = _fadeCurve.Evaluate(_invert.Value ? 1 : 0) * color.a;
+      targets[i].color = color;
     }
   }
 
   void Update() {
-    Debug.LogFormat("{0}: Fader is fading {1}", name, _fading);
     if (!_fading) { return; }
     Evaluate();
   }
 
-  public void Evaluate() {
+  void Evaluate() {
     var alpha = _fadeCurve.Evaluate(_invert.Value ? 1 - _variable.Value : _variable.Value);
     foreach (var target in _targets) {
       var color = target.graphic.color;
