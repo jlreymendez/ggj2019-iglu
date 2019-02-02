@@ -21,12 +21,12 @@ public class PlayerCharacter : MonoBehaviour
     private Vector3 lastMoveDir = Vector3.zero;
     private string lastState = PLAYER_START;
     private Animator animator;
-    private Rigidbody _rigidbody;
+    private CharacterController _controller;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody>();
+        _controller = GetComponent<CharacterController>();
 
         //Default state
         animator.Play(PLAYER_IDLE_RIGHT_DOWN);
@@ -59,8 +59,7 @@ public class PlayerCharacter : MonoBehaviour
         bool isIdle = Mathf.Abs(hMove) < EPSILON && Mathf.Abs(vMove) < EPSILON;
         Vector3 moveDir = new Vector3(hMove, 0, vMove).normalized;
         PlayAnimator(moveDir);
-        Vector3 newPosition = transform.position + moveDir * speed * Time.deltaTime;
-        _rigidbody.position = newPosition;
+        _controller.SimpleMove(moveDir * speed);
     }
 
     private void PlayAnimator(Vector3 animatorDir)
