@@ -6,15 +6,6 @@ using Ludilo;
 public class Energy : MonoBehaviour {
 
     #region Public
-    public void StopDrain() {
-        _draining = false;
-    }
-
-
-    public void StartDrain() {
-        _draining = true;
-    }
-
     public void EnterBase(Collider collider) {
         // Check the state of the base.
         var bastion = collider.GetComponentInParent<Bastion>();
@@ -27,20 +18,26 @@ public class Energy : MonoBehaviour {
         _charging = false;
         _currentBastion = null;
         var bastion = collider.GetComponentInParent<Bastion>();
-        if (!bastion.HasLight) {
-            _draining = true;
+        if (bastion.HasLight) {
+            _safeAreas[bastion.GetInstanceID()] = bastion;
+        } else {
+            _safeAreas.Remove(bastion.GetInstanceID());
         }
+        _draining = _safeAreas.Count == 0;
     }
 
     public void EnterBaseArea(Collider collider) {
         var bastion = collider.GetComponentInParent<Bastion>();
         if (bastion.HasLight) {
-            _draining = false;
+            _safeAreas[bastion.GetInstanceID()] = bastion;
         }
+        _draining = _safeAreas.Count == 0;
     }
 
     public void ExitBaseArea(Collider collider) {
-        _draining = true;
+        var bastion = collider.GetComponentInParent<Bastion>();
+        _safeAreas.Remove(bastion.GetInstanceID());
+        _draining = _safeAreas.Count == 0;
     }
 
     #endregion
@@ -88,6 +85,7 @@ public class Energy : MonoBehaviour {
     float _deltaPosition;
     Vector3 _oldPosition;
     Bastion _currentBastion;
+    Dictionary<int, Bastion> _safeAreas = new Dictionary<int, Bastion>();
 
     void TimeLoss() {
         _currentEnergy.Value -= _drainSpeed.Value * Time.deltaTime;
