@@ -36,6 +36,7 @@ ModelImporter:
     100060: Icosphere.004
     100062: //RootNode
     100064: Luz
+    100066: Icosphere.000
     400000: Cone.001
     400002: Cone.003
     400004: Cone.004
@@ -69,11 +70,13 @@ ModelImporter:
     400060: Icosphere.004
     400062: //RootNode
     400064: Luz
+    400066: Icosphere.000
     2100000: Roca.001
     2100002: Roca
     2100004: BlancoIglu
     2100006: No Name
     2100008: BlancoIglu.001
+    2100010: "SueloDa\xF1ado"
     2300000: Cone.001
     2300002: Cone.003
     2300004: Cone.004
@@ -105,6 +108,7 @@ ModelImporter:
     2300056: Icosphere.003
     2300058: Icosphere.004
     2300060: Luz
+    2300062: Icosphere.000
     3300000: Cone.001
     3300002: Cone.003
     3300004: Cone.004
@@ -136,6 +140,7 @@ ModelImporter:
     3300056: Icosphere.003
     3300058: Icosphere.004
     3300060: Luz
+    3300062: Icosphere.000
     4300000: Luz
     4300002: Cube.015
     4300004: Cylinder.003
@@ -167,6 +172,7 @@ ModelImporter:
     4300056: Cylinder.005
     4300058: Icosphere.004
     4300060: Icosphere.003
+    4300062: Icosphere.000
     2186277476908879412: ImportLogs
   externalObjects:
   - first:

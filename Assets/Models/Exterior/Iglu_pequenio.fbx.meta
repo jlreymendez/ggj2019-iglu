@@ -34,6 +34,9 @@ ModelImporter:
     100056: Icosphere.001
     100058: Icosphere.002
     100060: //RootNode
+    100062: Empty
+    100064: Icosphere.003
+    100066: Icosphere.004
     400000: Cone.001
     400002: Cone.003
     400004: Cone.004
@@ -65,9 +68,13 @@ ModelImporter:
     400056: Icosphere.001
     400058: Icosphere.002
     400060: //RootNode
+    400062: Empty
+    400064: Icosphere.003
+    400066: Icosphere.004
     2100000: Roca
     2100002: BlancoIglu
     2100004: No Name
+    2100006: "SueloDa\xF1ado"
     2300000: Cone.001
     2300002: Cone.003
     2300004: Cone.004
@@ -98,6 +105,8 @@ ModelImporter:
     2300054: Icosphere
     2300056: Icosphere.001
     2300058: Icosphere.002
+    2300060: Icosphere.003
+    2300062: Icosphere.004
     3300000: Cone.001
     3300002: Cone.003
     3300004: Cone.004
@@ -128,6 +137,8 @@ ModelImporter:
     3300054: Icosphere
     3300056: Icosphere.001
     3300058: Icosphere.002
+    3300060: Icosphere.003
+    3300062: Icosphere.004
     4300000: Cube.015
     4300002: Cylinder.003
     4300004: Cube.003
@@ -158,6 +169,9 @@ ModelImporter:
     4300054: Cylinder.002
     4300056: Cylinder
     4300058: Icosphere
+    4300060: Icosphere.003
+    4300062: Icosphere.004
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
